@@ -1,0 +1,118 @@
+//jobs functions
+var Jobs_service = function() {
+
+    var url;
+
+    this.initialize = function(serviceURL) {
+        url = serviceURL ? serviceURL : base_url;
+        var deferred = $.Deferred();
+        deferred.resolve();
+        return deferred.promise();
+    }
+
+    this.findById = function(id) {
+        return $.ajax({url: url + "/" + id});
+    }
+
+    this.get_jobs = function(job_status) {
+		var request = url + "jobs/get_jobs/" + job_status;
+        return $.ajax({url: request});
+    }
+
+    this.getJobDetail = function(job_id,job_status) {
+        var request = url + "jobs/get_job_detail/" + job_id + "/" + job_status;
+        return $.ajax({url: request});
+    }
+    this.bookJob = function(job_id) {
+    	var request = url + "jobs/book_job/" + job_id;
+        return $.ajax({url: request});
+    }	
+
+}
+
+function get_jobs(jobs_status)
+{
+	// $( "#loader-wrapper" ).removeClass( "display_none" );
+	var service = new Jobs_service();
+	service.initialize().done(function () {
+		console.log("Service initialized");
+	});
+	
+	//get client's credentials
+	
+	service.get_jobs(jobs_status).done(function (employees) {
+		var data = jQuery.parseJSON(employees);
+		
+		if(data.message == "success")
+		{
+			// $( "#news-of-icpak" ).addClass( "display_block" );
+			$( "#jobs_div" ).html( data.result );
+			// $( "#loader-wrapper" ).addClass( "display_none" );
+		}
+		
+		else
+		{
+
+		}
+	});
+}
+
+
+
+function get_job_description(job_id,job_status)
+{
+	// $( "#loader-wrapper" ).removeClass( "display_none" );
+	var service = new Jobs_service();
+	service.initialize().done(function () {
+		console.log("Service initialized");
+	});
+	
+	service.getJobDetail(job_id,job_status).done(function (employees) {
+		var data = jQuery.parseJSON(employees);
+		
+		if(data.message == "success")
+		{
+			// $( "#news-of-icpak" ).addClass( "display_block" );
+			$( "#single_job" ).html( data.result );
+			// $( "#loader-wrapper" ).addClass( "display_none" );
+		}
+		
+		else
+		{
+
+		}
+	});
+}
+
+function request_job(job_id,job_status) {
+	// body...
+	var service = new Jobs_service();
+	service.initialize().done(function () {
+		console.log("Service initialized");
+	});
+	
+	service.bookJob(job_id).done(function (employees) {
+		var data = jQuery.parseJSON(employees);
+		
+		if(data.message == "success")
+		{
+			// $( "#news-of-icpak" ).addClass( "display_block" );
+			// $( "#request_response" ).html(data.result);
+			// $( "#loader-wrapper" ).addClass( "display_none" );
+			alert(data.result);
+		}
+		
+		else
+		{
+			alert(data.result);
+		}
+	});
+	get_job_description(job_id,job_status);
+}
+
+//pass the variable in the link as follows e.g. news.html?id=1
+//on the news.html page get the parameter by javascript as follows var id = getURLParameter('id');
+//the function to get the url parameter is defined below
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
