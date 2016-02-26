@@ -26,8 +26,37 @@ var Jobs_service = function() {
     this.bookJob = function(job_id) {
     	var request = url + "jobs/book_job/" + job_id;
         return $.ajax({url: request});
+    }
+    this.get_profile = function() {
+		var request = url + "profile/get_client_profile";
+        return $.ajax({url: request});
     }	
 
+}
+
+function get_profile()
+{
+	// $( "#loader-wrapper" ).removeClass( "display_none" );
+	var service = new Jobs_service();
+	service.initialize().done(function () {
+		console.log("Service initialized");
+	});
+	
+	//get client's credentials
+	
+	service.get_profile().done(function (employees) {
+		var data = jQuery.parseJSON(employees);
+		
+		if(data.message == "success")
+		{
+			$( "#seeker_profile" ).html( data.result );
+		}
+		
+		else
+		{
+
+		}
+	});
 }
 
 function get_jobs(jobs_status)
