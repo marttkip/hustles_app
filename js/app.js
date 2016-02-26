@@ -36,6 +36,7 @@ var Login_service = function() {
 
 $(document).on("submit","form#login_member",function(e)
 {
+	alert("here");
 	e.preventDefault();
 	
 	//get form values
