@@ -40,18 +40,18 @@
 			</div>
 			<div class="mainmenu">
 				<div class="row">
-					<div class="col-50">
+					<div class="col-50 display_none" id="dashboard"  >
 						<div class="menu">
-						<a href="dashboard.html" class="item-link close-panel">
+						<a href="dashboard.html" class="item-link close-panel" >
 							<img src="img/menu/1.png" alt="">
 							DASHBOARD
 							</a>
 						</div>
 					</div>
 					
-					<div class="col-50">
+					<div class="col-50 display_none" id="profile">
 						<div class="menu">
-						<a class="item-link close-panel item-content" href="profile.html" onclick="get_profile();">
+						<a class="item-link close-panel item-content" href="profile.html" onclick="get_profile();" >
 							<img src="img/menu/2.png" alt="">
 							PROFILE</a>
 						</div>
@@ -100,7 +100,7 @@
 			<div class="register-content">
 				<a href="index.html#" class="close-login-screen floatright"><i class="fa fa-times"></i></a>
 				<h3><img src="img/logo2.png" alt=""></h3>
-				<form action="#" method="post" id="login_member" >
+				<form action="register" method="post" id="login_member" >
 					<div class="inputbox">
 						<span>Email:</span><br>
 						<input type="text" name="email" id="email" placeholder="Email">
@@ -113,7 +113,7 @@
 						<a data-popup=".popup-forgetpass" class="open-popup"   href="index.html#">Forget Password?</a>
 					</div>
 					<div class="inputbox">
-						<input type="submit" class="button button-big" id="submit" name="submit" value="Login"/>
+						<button type="submit" class="button button-big" id="submit" name="submit" >Login</button>
 					</div>						
 				</form>	
 				<!-- <p>Don’t have an account?  <a data-popup=".popup-register" class="open-popup" href="index.html#">Sign Up</a></p> -->
@@ -186,8 +186,9 @@
 					</div>
 					<!-- We have home navbar without left link-->
 					<div class="center sliding"><img src="img/logo.png" alt="" /></div>
-					<div class="right">
-				  <!-- right link contains only icon - additional "icon-only" class--><a href="index.html#" data-panel="right" class="link icon-only open-login-screen"><img src="img/menu2.png" alt=""></a>
+					<div class="right" >
+				  <!-- right link contains only icon - additional "icon-only" class-->
+				  		<a href="index.html#" id="profile_icon" data-panel="right" class="link icon-only open-login-screen"><img src="img/menu2.png" alt=""></a>
 					</div>
 				</div>
 			</div>
@@ -275,5 +276,7 @@
     <script type="text/javascript" src="js/jquery.swipebox.js"></script>
 	<!-- Path to your app js --> 
     <script type="text/javascript" src="js/my-app.js"></script>
+	<!-- Path to your app js --> 
+    <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>

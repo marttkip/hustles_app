@@ -24,7 +24,7 @@ var Login_service = function() {
         return $.ajax({url: request});
     }*/
     this.login_member = function(form_data) {
-  		var request = url + "login/login_member";
+  		var request = url + "profile/login_seeker";
         return $.ajax({url: request, data: form_data, type: 'POST', processData: false,contentType: false});
     }
     this.get_member_details = function(member_no){
@@ -36,7 +36,6 @@ var Login_service = function() {
 
 $(document).on("submit","form#login_member",function(e)
 {
-	alert('sdasda');
 	e.preventDefault();
 	
 	//get form values
@@ -61,9 +60,15 @@ $(document).on("submit","form#login_member",function(e)
 			{
 				//set local variables for future auto login
 				
-				//myApp.closeModal('.popup-profup');
-				//mainView.router.loadPage('professionals.html');
+				$( ".mainmenu #dashboard" ).css( "display", 'inline-block' );
+				$( ".mainmenu #profile" ).css( "display", 'inline-block' );
+				$( "#profile_icon" ).html( '<a href="profile.html" class="link icon-only" onclick="get_profile();"><img src="img/menu2.png" alt=""></a>' );
+
+
 				alert(data.message);
+
+				myApp.closeModal('.login-screen');
+				mainView.router.loadPage('dashboard.html');
 			}
 			else
 			{

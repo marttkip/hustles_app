@@ -1399,6 +1399,10 @@ display: none;
   height: 85px;
 }
 .splash-logo{
-  
+
   margin:10% 0 10% 0;
 }
+
+.display_none{display: none;}
+.display_block{display: block;}
+
