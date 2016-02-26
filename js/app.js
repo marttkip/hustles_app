@@ -36,6 +36,7 @@ var Login_service = function() {
 
 $(document).on("submit","form#login_member",function(e)
 {
+	alert('sdasda');
 	e.preventDefault();
 	
 	//get form values
@@ -76,12 +77,4 @@ $(document).on("submit","form#login_member",function(e)
 		alert("No internet connection - please check your internet connection then try again");
 	}
 	return false;
-});
-
-
-//Login member
-$(document).on("submit","form#login_member",function(e)
-{
-	
-	alert("here");
 });
