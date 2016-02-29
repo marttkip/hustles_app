@@ -1406,3 +1406,332 @@ display: none;
 .display_none{display: none;}
 .display_block{display: block;}
 
+
+
+/*button*/
+
+.btn {
+    white-space: normal;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 5px;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.btn-sm, .btn-xs {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.btn-primary {
+  border-color: #0088cc;
+  background-color: #0088cc;
+  border-color: #0088cc #0088cc #b3b3b3;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover {
+  border-color: #d9d9d9;
+  background-color: #d9d9d9;
+  color: white;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  border-color: #bfbfbf;
+  background-color: #bfbfbf;
+  color: white;
+}
+
+.btn-primary.dropdown-toggle {
+  border-left-color: #bfbfbf;
+}
+
+.btn-primary[disabled] {
+  border-color: white;
+  background-color: white;
+}
+.btn-success {
+  border-color: #47a447;
+  background-color: #47a447;
+  border-color: #47a447 #47a447 #388038;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-success:hover {
+  border-color: #51b451;
+  background-color: #51b451;
+  color: white;
+}
+
+.btn-success:active, .btn-success:focus {
+  border-color: #3f923f;
+  background-color: #3f923f;
+  color: white;
+}
+
+.btn-success.dropdown-toggle {
+  border-left-color: #3f923f;
+}
+
+.btn-success[disabled] {
+  border-color: #86cb86;
+  background-color: #86cb86;
+}
+
+.btn-warning {
+  border-color: #ed9c28;
+  background-color: #ed9c28;
+  border-color: #ed9c28 #ed9c28 #d18211;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-warning:hover {
+  border-color: #efa740;
+  background-color: #efa740;
+  color: white;
+}
+
+.btn-warning:active, .btn-warning:focus {
+  border-color: #e89113;
+  background-color: #e89113;
+  color: white;
+}
+
+.btn-warning.dropdown-toggle {
+  border-left-color: #e89113;
+}
+
+.btn-warning[disabled] {
+  border-color: #f5c786;
+  background-color: #f5c786;
+}
+
+.btn-danger {
+  border-color: #d2322d;
+  background-color: #d2322d;
+  border-color: #d2322d #d2322d #a82824;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-danger:hover {
+  border-color: #d64742;
+  background-color: #d64742;
+  color: white;
+}
+
+.btn-danger:active, .btn-danger:focus {
+  border-color: #bd2d29;
+  background-color: #bd2d29;
+  color: white;
+}
+
+.btn-danger.dropdown-toggle {
+  border-left-color: #bd2d29;
+}
+
+.btn-danger[disabled] {
+  border-color: #e48481;
+  background-color: #e48481;
+}
+
+.btn-info {
+  border-color: #5bc0de;
+  background-color: #5bc0de;
+  border-color: #5bc0de #5bc0de #31b0d5;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-info:hover {
+  border-color: #70c8e2;
+  background-color: #70c8e2;
+  color: white;
+}
+
+.btn-info:active, .btn-info:focus {
+  border-color: #46b8da;
+  background-color: #46b8da;
+  color: white;
+}
+
+.btn-info.dropdown-toggle {
+  border-left-color: #46b8da;
+}
+
+.btn-info[disabled] {
+  border-color: #b0e1ef;
+  background-color: #b0e1ef;
+}
+
+.btn-dark {
+  border-color: #171717;
+  background-color: #171717;
+  border-color: #171717 #171717 black;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-dark:hover {
+  border-color: #242424;
+  background-color: #242424;
+  color: white;
+}
+
+.btn-dark:active, .btn-dark:focus {
+  border-color: #0a0a0a;
+  background-color: #0a0a0a;
+  color: white;
+}
+
+.btn-dark.dropdown-toggle {
+  border-left-color: #0a0a0a;
+}
+
+.btn-dark[disabled] {
+  border-color: #4a4a4a;
+  background-color: #4a4a4a;
+}
+
+.btn-default {
+  background-color: #282d36;
+  border-color: #282d36;
+  color: #EEE;
+}
+
+.btn-default:hover {
+  background-color: #2a3039;
+  border-color: #2a3039;
+}
+
+.btn-default:focus, .btn-default:active {
+  background-color: #242830;
+  border-color: #242830;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #EEE;
+  background-color: #242830;
+  border-color: #242830;
+}
+
+.view-detail a {
+  margin-top: 30px;
+}
+
+
+
+/*loader*/
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -75px 0 0 -75px;
+  -moz-border-radius:50%; /* Firefox */
+  -webkit-border-radius:50%; /* Safari and chrome */
+  -khtml-border-radius:50%; /* Linux browsers */
+  border-radius:50%; /* CSS3 */
+    border: 3px solid transparent;
+    border-top-color: #42a5f5 ;
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+ 
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+  -moz-border-radius:50%; /* Firefox */
+  -webkit-border-radius:50%; /* Safari and chrome */
+  -khtml-border-radius:50%; /* Linux browsers */
+  border-radius:50%; /* CSS3 */
+    border: 3px solid transparent;
+    border-top-color: #d32f2f;
+    -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+      animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+ 
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  -moz-border-radius:50%; /* Firefox */
+  -webkit-border-radius:50%; /* Safari and chrome */
+  -khtml-border-radius:50%; /* Linux browsers */
+  border-radius:50%; /* CSS3 */
+    border: 3px solid transparent;
+    border-top-color: #C29D07;
+    -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+      animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+ 
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+/*end of loader*/
+

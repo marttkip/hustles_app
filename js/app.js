@@ -64,15 +64,18 @@ $(document).on("submit","form#login_member",function(e)
 				$( ".mainmenu #profile" ).css( "display", 'inline-block' );
 				$( "#profile_icon" ).html( '<a href="profile.html" class="link icon-only" onclick="get_profile();"><img src="img/menu2.png" alt=""></a>' );
 
+				$("#login_response").html('<div class="alert alert-success center-align">'+"You have successfully logged in"+'</div>').fadeIn( "slow");
 
-				alert(data.message);
+				// alert(data.message);
 
 				myApp.closeModal('.login-screen');
 				mainView.router.loadPage('dashboard.html');
 			}
 			else
 			{
-				alert(data.result);
+				// alert(data.result);
+				$("#login_response").html('<div class="alert alert-danger center-align">'+"No internet connection - please check your internet connection then try again"+'</div>').fadeIn( "slow");
+				mainView.router.loadPage('dashboard.html');
 			}
         });
 	}

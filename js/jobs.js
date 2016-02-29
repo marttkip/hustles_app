@@ -19,6 +19,13 @@ var Jobs_service = function() {
         return $.ajax({url: request});
     }
 
+    this.get_map = function() {
+
+		var request = url + "jobs/get_map";
+		alert("sdkajsda"+request);
+        return $.ajax({url: request});
+    }
+
     this.getJobDetail = function(job_id,job_status) {
         var request = url + "jobs/get_job_detail/" + job_id + "/" + job_status;
         return $.ajax({url: request});
@@ -31,12 +38,20 @@ var Jobs_service = function() {
 		var request = url + "profile/get_client_profile";
         return $.ajax({url: request});
     }	
+    this.getAdvertDetail = function(advert_id) {
+        var request = url + "advertising/get_advert_detail/" + advert_id;
+        return $.ajax({url: request});
+    }
+    this.get_advertisments = function() {
+		var request = url + "advertising/get_adverts";
+        return $.ajax({url: request});
+    }
 
 }
 
 function get_profile()
 {
-	// $( "#loader-wrapper" ).removeClass( "display_none" );
+	$( "#loader-wrapper" ).removeClass( "display_none" );
 	var service = new Jobs_service();
 	service.initialize().done(function () {
 		console.log("Service initialized");
@@ -61,7 +76,7 @@ function get_profile()
 
 function get_jobs(jobs_status)
 {
-	// $( "#loader-wrapper" ).removeClass( "display_none" );
+	$( "#loader-wrapper" ).removeClass( "display_none" );
 	var service = new Jobs_service();
 	service.initialize().done(function () {
 		console.log("Service initialized");
@@ -76,6 +91,35 @@ function get_jobs(jobs_status)
 		{
 			// $( "#news-of-icpak" ).addClass( "display_block" );
 			$( "#jobs_div" ).html( data.result );
+			$( "#loader-wrapper" ).addClass( "display_none" );
+		}
+		
+		else
+		{
+
+		}
+	});
+}
+
+function get_home_map()
+{
+
+	$( "#loader-wrapper" ).removeClass( "display_none" );
+	var service = new Jobs_service();
+	service.initialize().done(function () {
+		console.log("Service initialized");
+	});
+
+	//get client's credentials	
+
+	service.get_map().done(function (employees) {
+		var data = jQuery.parseJSON(employees);
+		
+		if(data.message == "success")
+		{
+			// $( "#news-of-icpak" ).addClass( "display_block" );
+			alert(data.result);
+			$( "#map-canvas" ).html( data.result );
 			// $( "#loader-wrapper" ).addClass( "display_none" );
 		}
 		
@@ -90,7 +134,7 @@ function get_jobs(jobs_status)
 
 function get_job_description(job_id,job_status)
 {
-	// $( "#loader-wrapper" ).removeClass( "display_none" );
+	$( "#loader-wrapper" ).removeClass( "display_none" );
 	var service = new Jobs_service();
 	service.initialize().done(function () {
 		console.log("Service initialized");
@@ -103,6 +147,31 @@ function get_job_description(job_id,job_status)
 		{
 			// $( "#news-of-icpak" ).addClass( "display_block" );
 			$( "#single_job" ).html( data.result );
+			// $( "#loader-wrapper" ).addClass( "display_none" );
+		}
+		
+		else
+		{
+
+		}
+	});
+}
+
+function get_advert_description(advert_id)
+{
+	$( "#loader-wrapper" ).removeClass( "display_none" );
+	var service = new Jobs_service();
+	service.initialize().done(function () {
+		console.log("Service initialized");
+	});
+	
+	service.getAdvertDetail(advert_id).done(function (employees) {
+		var data = jQuery.parseJSON(employees);
+		
+		if(data.message == "success")
+		{
+			// $( "#news-of-icpak" ).addClass( "display_block" );
+			$( "#single_advert" ).html( data.result );
 			// $( "#loader-wrapper" ).addClass( "display_none" );
 		}
 		
@@ -139,6 +208,33 @@ function request_job(job_id,job_status) {
 	get_job_description(job_id,job_status);
 }
 
+
+function get_adverts()
+{
+	$( "#loader-wrapper" ).removeClass( "display_none" );
+	var service = new Jobs_service();
+	service.initialize().done(function () {
+		console.log("Service initialized");
+	});
+	
+	//get client's credentials
+	
+	service.get_advertisments().done(function (employees) {
+		var data = jQuery.parseJSON(employees);
+		
+		if(data.message == "success")
+		{
+			// $( "#news-of-icpak" ).addClass( "display_block" );
+			$( "#adverts_div" ).html( data.result );
+			$( "#loader-wrapper" ).addClass( "display_none" );
+		}
+		
+		else
+		{
+
+		}
+	});
+}
 //pass the variable in the link as follows e.g. news.html?id=1
 //on the news.html page get the parameter by javascript as follows var id = getURLParameter('id');
 //the function to get the url parameter is defined below
